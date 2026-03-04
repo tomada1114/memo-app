@@ -1,16 +1,39 @@
-# React + Vite
+# メモアプリ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+シンプルなメモ管理アプリケーション。カテゴリ分類とフィルタリング機能を備え、ブラウザの localStorage にデータを保存します。
 
-Currently, two official plugins are available:
+## 主な機能
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- メモの作成・編集・削除
+- カテゴリ分類（仕事 / 個人 / アイデア）
+- カテゴリによるフィルタリング
+- localStorage によるデータ永続化
+- キーボードショートカット（Enter で追加、Escape で編集キャンセル）
 
-## React Compiler
+## 技術スタック
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- Vite 7
+- ESLint 9
 
-## Expanding the ESLint configuration
+## セットアップ
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+```
+
+## 起動方法
+
+```bash
+# 開発サーバー起動（http://localhost:5173）
+npm run dev
+
+# プロダクションビルド
+npm run build
+
+# ビルド結果のプレビュー
+npm run preview
+
+# Lint チェック
+npm run lint
+```
