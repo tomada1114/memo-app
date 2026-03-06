@@ -1,32 +1,36 @@
-# CLAUDE.md
+# memo-app
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+## 概要
+社内メモ管理アプリ。メモの追加・編集・削除・カテゴリ分類ができる。
+データはlocalStorageに保存される。
 
-## Commands
+## 技術スタック
+- React 19（UIライブラリ）
+- JavaScript
+- Vite 7（ビルドツール）
+- ESLint 9（静的解析）
+- localStorage（データ永続化）
 
-```bash
-npm run dev       # Start dev server (http://localhost:5173)
-npm run build     # Production build → dist/
-npm run preview   # Preview production build
-npm run lint      # Run ESLint
-```
+## ディレクトリ構造
+src/
+├── components/    # Reactコンポーネント
+├── App.jsx        # メインのアプリケーションコンポーネント
+├── main.jsx       # エントリーポイント
+└── index.css      # グローバルスタイル
 
-## Architecture
+## 開発コマンド
+- `npm run dev` - 開発サーバー起動
+- `npm run build` - 本番ビルド
+- `npm run preview` - ビルド結果のプレビュー
+- `npm run lint` - ESLintチェック
 
-React 19 + Vite 7 SPA. No routing library, no state management library — currently a blank slate.
+## コーディング規約
+- コンポーネントは関数コンポーネントで記述してください
+- 変数名・関数名はキャメルケースで書いてください
+- CSSクラス名にはハイフン区切りを使用してください
+- コミットメッセージは日本語で書いてください
 
-- `src/main.jsx` — Entry point, mounts `<App />` into `#root`
-- `src/App.jsx` — Root component
-- `src/index.css` — Global styles (imported in main.jsx)
-
-## Tech Stack
-
-- **React 19** (JSX, `.jsx` files)
-- **Vite 7** with `@vitejs/plugin-react` (Babel transform)
-- **ESLint 9** flat config — rules: `eslint:recommended`, `react-hooks`, `react-refresh`
-
-## ESLint Notes
-
-- Config: `eslint.config.js` (flat config format)
-- `no-unused-vars` ignores names matching `/^[A-Z_]/` (constants/components pattern)
-- No TypeScript — plain `.js`/`.jsx` only
+## 禁止事項
+- console.logを本番コードに残さないでください
+- 既存のテストを削除しないでください
+- グローバル変数を使用しないでください
